@@ -1,7 +1,3 @@
-//
-// Created by echrysta on 7/20/22.
-//
-
 #include <iostream>
 #include "Phonebook.hpp"
 
@@ -22,6 +18,6 @@ int	main(void)
         else if (str == "EXIT")
             return (0);
         else
-            std::cout << "Invalid Command: " << str << std::endl << "Please, write: ADD, SEARCH or EXIT" << std::endl;
+            std::cout << "Invalid Command: " << str << std::endl << "Please, write with CAPSLOCK: ADD, SEARCH or EXIT" << std::endl;
     }
 }

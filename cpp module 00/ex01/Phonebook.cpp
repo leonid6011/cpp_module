@@ -1,10 +1,7 @@
-//
-// Created by echrysta on 7/20/22.
-//
-
 #include "Phonebook.hpp"
 #include <iostream>
 #include <iomanip>
+#include <stdlib.h>
 
 int Phonebook::index = 0;
 int Phonebook::countContacts = 0;
@@ -12,7 +9,7 @@ int Phonebook::countContacts = 0;
 void	Phonebook::add(void)
 {
     if (this->countContacts == 8)
-        std::cout << "Warning! Full memory!"  << std::endl;
+        std::cout << "Full memory. The oldest contact will be overwritten!"  << std::endl;
     std::cout << "Please, put the first name: ";
     std::string	firstName;
     std::cin >> firstName;
@@ -34,14 +31,16 @@ void	Phonebook::add(void)
     std::cin >> darkestSecret;
     Phonebook::contacts[this->index].setDarkestSecret(darkestSecret);
     this->index = (this->index + 1) % 8;
-    if (this->countContacts< 8)
+    if (this->countContacts < 8)
         this->countContacts++;
 }
 
-void	Phonebook::search()
+void    Phonebook::printPhonebook(void)
 {
-    std::cout << "|   Index  |First Name| Last Name| Nickname |" << std::endl;
-    for (int i = 0; i < this->countContacts; i++)
+    int i;
+
+    std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
+    for (i = 0; i < this->countContacts; i++)
     {
         std::cout << "|" << std::setw(10) << i;
         if (Phonebook::contacts[i].getFirstName().size() > 10)
@@ -58,20 +57,34 @@ void	Phonebook::search()
             std::cout << "|" << std::setw(10) << Phonebook::contacts[i].getNickname();
         std::cout << "|" << std::endl;
     }
+}
+
+void	Phonebook::search(void)
+{
+    std::string indexStr;
+    int         index;
+
+    printPhonebook();
     if (this->countContacts > 0)
     {
         std::cout << "Enter an index between 0 and " << this->countContacts - 1 << ": ";
-        int		index;
-        std::cin >> index;
-        if (index >= 0 && index <= this->countContacts - 1)
+        std::cin >> indexStr;
+
+        index = atoi(indexStr.c_str());
+        if (indexStr.length() == 1 && indexStr[0] >= '0' && indexStr[0] <= '7')
         {
-            std::cout << "First Name: " << Phonebook::contacts[index].getFirstName() << std::endl;
-            std::cout << "Last Name: " << Phonebook::contacts[index].getLastName() << std::endl;
-            std::cout << "Nick Name: " << Phonebook::contacts[index].getNickname() << std::endl;
-            std::cout << "Phone Number: " << Phonebook::contacts[index].getPhoneNumber() << std::endl;
-            std::cout << "Darkest Secret: " << Phonebook::contacts[index].getDarkestSecret() << std::endl;
-        }
+            if (index >= 0 && index <= this->countContacts - 1)
+            {
+                std::cout << "First Name: " << Phonebook::contacts[index].getFirstName() << std::endl;
+                std::cout << "Last Name: " << Phonebook::contacts[index].getLastName() << std::endl;
+                std::cout << "Nick Name: " << Phonebook::contacts[index].getNickname() << std::endl;
+                std::cout << "Phone Number: " << Phonebook::contacts[index].getPhoneNumber() << std::endl;
+                std::cout << "Darkest Secret: " << Phonebook::contacts[index].getDarkestSecret() << std::endl;
+            }
+            else
+			    std::cout << "Index out of range." << std::endl;
+            }
         else
-            std::cout << "Index out of range." << std::endl;
+            std::cout << "Bad argument!" << std::endl;
     }
 }

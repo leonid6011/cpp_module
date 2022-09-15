@@ -1,7 +1,3 @@
-//
-// Created by echrysta on 7/20/22.
-//
-
 #ifndef CPP_CLION_PHONEBOOK_HPP
 #define CPP_CLION_PHONEBOOK_HPP
 
@@ -15,9 +11,9 @@ class Phonebook {
         static	int	countContacts;
     public:
         void	add();
+        void    printPhonebook();
         void	search();
 
 };
 
-
-#endif //CPP_CLION_PHONEBOOK_HPP
+#endif

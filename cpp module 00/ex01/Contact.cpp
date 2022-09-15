@@ -1,7 +1,3 @@
-//
-// Created by echrysta on 7/20/22.
-//
-
 #include "Contact.hpp"
 
 std::string	Contact::getFirstName(void)
@@ -28,8 +24,6 @@ std::string	Contact::getDarkestSecret(void)
 {
     return (this->darkestSecret);
 }
-
-// Setters
 
 void	Contact::setFirstName(std::string fn)
 {
