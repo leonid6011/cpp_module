@@ -1,16 +1,13 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie(std::string new_name) {
-	
-	this->name = new_name; //конструктор который мы вызываем каждый раз при создании объекта
+	this->name = new_name;
 }
 
 Zombie::~Zombie() {
-	
-	std::cout << name << " is dead, again!" << std::endl; //деструктор который мы ввызываем при удалении класса (отчистки данных) и печатаем сообщение
+	std::cout << name << " is dead, again!" << std::endl;
 }
 
 void Zombie::announcement( void ) {
-	
 	std::cout << name  << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

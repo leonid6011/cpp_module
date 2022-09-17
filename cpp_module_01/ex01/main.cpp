@@ -18,13 +18,10 @@ int main(void) {
 	}
 	hordeZombie = zombieHorde(n, name);
 	std::cout << std::endl;
-	
 	for (int i = 0; i < n; i++)
 	{
 		hordeZombie[i].announcement();
 	}
-	
 	std::cout << std::endl;
-
 	delete []hordeZombie;
 }

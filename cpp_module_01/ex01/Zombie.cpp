@@ -3,7 +3,6 @@
 Zombie::Zombie() {}
 
 Zombie::~Zombie() {
-	
 	std::cout << name << " is dead, again!" << std::endl;
 }
 
@@ -16,6 +15,5 @@ std::string Zombie::getNameZombie(void) {
 }
 
 void Zombie::announcement(void) {
-	
 	std::cout << name  << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

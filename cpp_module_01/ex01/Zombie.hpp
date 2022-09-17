@@ -5,12 +5,11 @@
 # include <iostream>
 
 class Zombie {
-
 	private:
 		std::string name;
 	public:
 		Zombie();
-		~Zombie(); //деструктор
+		~Zombie();
 		void announcement(void);
 		void setNameZombie(std::string name);
 		std::string getNameZombie(void);

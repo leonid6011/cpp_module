@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 CC = c++
 
-SRCS = main.cpp Zombie.cpp NewZombie.cpp randomChup.cpp
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChup.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -8,17 +8,17 @@ int checkStr(std::string s1, std::string s2)
 {
     if (s1 == s2)
     {
-		std::cerr << "Your lines are the same!\n" << std::endl;
+		std::cerr << "Your lines are the same!" << std::endl;
 		return(EXIT_FAILURE);
 	}
 	if (s1.empty())
 	{
-		std::cerr << "Error! s1 are empty!\n" << std::endl;
+		std::cerr << "Error! s1 are empty!" << std::endl;
 		return(EXIT_FAILURE);
 	}
 	if (s2.empty())
 	{
-		std::cerr << "Error! s1 are empty!\n" << std::endl;
+		std::cerr << "Error! s2 are empty!" << std::endl;
 		return(EXIT_FAILURE);
 	}
     return(EXIT_SUCCESS);
@@ -30,7 +30,7 @@ std::string convertFileToStr(std::string fileName) {
     if (!file.is_open())
 	{
 		std::cerr << "Error! Failed attempt to open a file " << fileName << std::endl;
-		return (NULL);
+		exit(EXIT_FAILURE);
 	}
     std::ostringstream allFileString;
 	allFileString << file.rdbuf();
@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 {
     if (argc != 4)
 	{
-		std::cerr << "Error! Wrong number of arguments\n You must enter a filename and two strings, s1 and s2.\n" << std::endl;
+		std::cerr << "Error! Wrong number of arguments\n You must enter a filename and two strings, s1 and s2." << std::endl;
 		return(EXIT_FAILURE);
 	}
     std::string fileName(argv[1]);
@@ -79,9 +79,10 @@ int main(int argc, char **argv)
     std::string fileString = convertFileToStr(fileName);
     if (fileString.empty())
 	{
-        return(1);
+		std::cerr << "File is empty!" << std::endl;
+        return(EXIT_FAILURE);
 	}
 	myReplace(fileString, s1, s2);
 	if (convertStrToFile(fileName, fileString))
-		return(1);
+		return(EXIT_FAILURE);
 }
