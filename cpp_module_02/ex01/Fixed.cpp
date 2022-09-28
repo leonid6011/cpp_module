@@ -22,9 +22,9 @@ Fixed::Fixed(const int value_input) {
 	this->value = value_input << bits;
 }
 
-Fixed::Fixed(float const value_input)
+Fixed::Fixed(const float value_input)
 {
-	std::cout << "Float Constructor Called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->value = roundf(value_input * (float)(1 << bits));
 }
 
