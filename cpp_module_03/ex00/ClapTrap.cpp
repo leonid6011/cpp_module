@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/09 14:00:28 by echrysta          #+#    #+#             */
+/*   Updated: 2022/10/09 14:00:29 by echrysta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
@@ -5,25 +17,25 @@ ClapTrap::ClapTrap() {
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
-	std::cout << name << " constructor has been called" << std::endl;
+	std::cout << "ClapTrap " << name << " constructor has been called" << std::endl;
 }
 
-ClapTrap::ClapTrap(conststd::string nameInput) {
+ClapTrap::ClapTrap(const std::string nameInput) {
 	this->name = nameInput;
 	hitPoints = 10;
 	energyPoints = 10;
 	attackDamage = 0;
-	std::cout << name << " constructor has been called" << std::endl;
+	std::cout << "ClapTrap " << name << " constructor has been called" << std::endl;
 }
 
 
 ClapTrap::~ClapTrap() {
-	std::cout << name << " destructor has been called" << std::endl;
+	std::cout << "ClapTrap " << name << " destructor has been called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
 	*this = copy;
-	std::cout << name << " copy constructor has been called" << std::endl;
+	std::cout << "ClapTrap " << name << " copy constructor has been called" << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &copyObject) {
@@ -33,7 +45,7 @@ ClapTrap	&ClapTrap::operator=(const ClapTrap &copyObject) {
 		this->hitPoints = copyObject.hitPoints;
 		this->energyPoints = copyObject.energyPoints;
 		this->attackDamage = copyObject.attackDamage;
-		std::cout << this->name <<  " copy assignment operator has been called " << copyObject.name << std::endl;
+		std::cout << "ClapTrap " << this->name <<  " copy assignment operator has been called " << copyObject.name << std::endl;
 		return (*this);
 	}
 	return (*this);
@@ -55,7 +67,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 void	ClapTrap::beRepaired(unsigned int amount) {
 	if (hitPoints > 0 && energyPoints > 0) {
 		hitPoints += amount;
-		std::cout << name << " has been repaired!" << std::endl;
+		std::cout << "ClapTrap "<< name << " has been repaired! Now hitPoints " << hitPoints  << std::endl;
 		energyPoints--;
 	}
 }

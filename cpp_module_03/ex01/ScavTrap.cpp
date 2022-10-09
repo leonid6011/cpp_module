@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/09 14:00:22 by echrysta          #+#    #+#             */
+/*   Updated: 2022/10/09 15:01:06 by echrysta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
@@ -38,7 +50,11 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &copyObject) {
 }
 
 void ScavTrap::attack(const std::string &target) {
-    std::cout << "ScavTrap " << name << " attack " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+	if (hitPoints > 0 && energyPoints > 0)
+	{
+		std::cout << "ScavTrap " << name << " attack " << target << ", causing " << attackDamage << " points of damage!" << std::endl;
+    	energyPoints--;
+	}
 }
 
 void ScavTrap::guardGate() {
