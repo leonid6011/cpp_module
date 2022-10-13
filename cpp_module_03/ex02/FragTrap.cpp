@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/09 14:01:56 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/09 14:05:52 by echrysta         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
@@ -50,5 +38,5 @@ FragTrap	&FragTrap::operator=(const FragTrap &copyObject) {
 }
 
 void FragTrap::highFivesGuys() {
-	std::cout << "FragTrap " << name << " high fives" << std::endl;
+	std::cout << "FragTrap high fives" << std::endl;
 }
