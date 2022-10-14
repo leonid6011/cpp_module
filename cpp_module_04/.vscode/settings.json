@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "animal.hpp": "c",
+        "new": "cpp",
+        "iostream": "cpp"
+    }
+}
