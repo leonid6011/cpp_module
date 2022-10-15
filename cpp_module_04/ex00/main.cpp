@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:34:02 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/14 17:07:47 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/15 20:48:07 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main()
 	const WrongAnimal* wrongMeta= new WrongAnimal();
 	const WrongAnimal* wrongCat = new WrongCat();
 
-	std::cout << "++++++++++++++++++++++++++++++++++++" << std::endl;
+	std::cout << "========================================" << std::endl;
 
 	std::cout << meta->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
@@ -30,7 +30,7 @@ int	main()
 	std::cout << wrongMeta->getType() << " " << std::endl;
 	std::cout << wrongCat->getType() << " " << std::endl;
 	
-	std::cout << "++++++++++++++++++++++++++++++++++++" << std::endl;
+	std::cout << "========================================" << std::endl;
 	
 	meta->makeSound();
 	i->makeSound(); //will output the cat sound!
@@ -38,7 +38,7 @@ int	main()
 	wrongMeta->makeSound();
 	wrongCat->makeSound();
 	
-	std::cout << "++++++++++++++++++++++++++++++++++++" << std::endl;
+	std::cout << "========================================" << std::endl;
 
 	delete i; //чистим за собой память
 	delete j; //чистим за собой память

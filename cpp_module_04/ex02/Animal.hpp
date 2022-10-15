@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:35:27 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/15 20:42:14 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/15 21:00:08 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Animal
 		Animal(const Animal &copy);
 		Animal &operator=(const Animal &copy);
 
-		virtual void	makeSound() const;
+		virtual void	makeSound() const = 0;
 		std::string		getType() const;
 		void			setType(const std::string TypeInput);
 };
