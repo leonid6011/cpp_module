@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:57:15 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/14 16:31:13 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:37:54 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat: public Animal
 		Cat(const Cat &copy);
 		Cat &operator=(const Cat &copy);
 
-		void makeSound() const;
+		virtual void makeSound() const;
 };
 
 #endif

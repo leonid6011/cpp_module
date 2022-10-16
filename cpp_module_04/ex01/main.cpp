@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 17:21:26 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/15 20:46:55 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:46:43 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,27 @@ int main()
 	
 	std::cout << "dogThree's " << dogThree.getBrain().getIdea(1) << std::endl;
 	std::cout << "Adress dogThree: " << &dogThree.getBrain() << std::endl;
+	std::cout << "========================================" << std::endl;
+	std::cout << "===========ArrayAnimals================" << std::endl;
+	Animal* animals[10];
+	for (int i = 1; i <= 10; i++)
+	{
+		std::cout << std::endl << "Init animal #" << i << std::endl;
+		if (i % 2 == 0)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
+	animals[1]->makeSound();
+	animals[2]->makeSound();
+	animals[3]->makeSound();
+
+	std::cout << "=========DeleteArrayAnimals==============" << std::endl;
+	for (int i = 1; i <= 10; i++)
+	{
+		std::cout << std::endl << "Delete animal #" << i << std::endl;
+		delete animals[i];
+	}
 	std::cout << "========================================" << std::endl;
 }
 

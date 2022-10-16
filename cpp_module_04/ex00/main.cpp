@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:34:02 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/15 20:48:07 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:27:44 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main()
 	std::cout << "========================================" << std::endl;
 
 	delete i; //чистим за собой память
-	delete j; //чистим за собой память
+	delete j;
 	delete meta;
 	delete wrongCat;
 	delete wrongMeta;
