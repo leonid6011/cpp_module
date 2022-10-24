@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:35:47 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/19 23:57:35 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/25 00:15:32 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copyObject)
 
 /* ======================================================== */
 
-const std::string &Bureaucrat::getName() const //поч 2 раза конст
+const std::string &Bureaucrat::getName() const
 {
     return nameBureaucrat;
 }
@@ -112,6 +112,6 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
 {
-    out << bureaucrat.getName() << " bureaucrat grade " << bureaucrat.getGrade() << std::endl;
+    out << bureaucrat.getName() << " has bureaucrat grade " << bureaucrat.getGrade() << std::endl;
     return out;
 }

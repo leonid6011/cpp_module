@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:35:47 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/21 22:00:55 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/25 00:22:43 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copyObject)
 
 /* ======================================================== */
 
-const std::string &Bureaucrat::getName() const //поч 2 раза конст
+const std::string &Bureaucrat::getName() const
 {
     return nameBureaucrat;
 }
