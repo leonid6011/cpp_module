@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:35:47 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/19 23:57:35 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/21 22:00:55 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat() : nameBureaucrat("DefaultName"), gradeBureaucrat(LOW)
 		throw GradeTooHighException();
 	else if (gradeBureaucrat > LOW)
 		throw GradeTooLowException();
-	std::cout << "Bureaucrat " << nameBureaucrat << " ->  Default constructor has been called." << std::endl;
+	std::cout << "Bureaucrat " << nameBureaucrat << " -> Default constructor has been called." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : nameBureaucrat(name), gradeBureaucrat(grade)
@@ -29,18 +29,19 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : nameBureaucrat(name
 		throw GradeTooHighException();
 	else if (gradeBureaucrat > LOW)
 		throw GradeTooLowException();
-	std::cout << "Bureaucrat " << nameBureaucrat << " ->  Default constructor has been called." << std::endl;
+	std::cout << "Bureaucrat " << nameBureaucrat << " -> Default constructor has been called." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copyObject)
 {
-	std::cout << "Bureaucrat -> Copy constructor has been called." << std::endl;
 	*this = copyObject;
+	std::cout << "Bureaucrat -> Copy constructor has been called." << std::endl;
+
 }
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat " << nameBureaucrat << "-> Destructor has been called." << std::endl;
+	std::cout << "Bureaucrat " << nameBureaucrat << " -> Destructor has been called." << std::endl;
 }
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &copyObject)
@@ -94,6 +95,30 @@ void Bureaucrat::rankDownBureaucrat()
 		throw GradeTooLowException();
 	}
 	std::cout << "The rank of bureaucrat " << nameBureaucrat << " was downgraded." << std::endl;
+}
+
+/* ======================================================== */
+
+void Bureaucrat::signForm(Form &form)
+{
+    try
+	{
+        if (form.getFormIsSigned() == true)
+        {
+            std::cout << "Form " << form.getFormName() << " -> is already signed by the bureaucrat!" << std::endl;
+            return;
+        }
+		else
+		{
+        	form.beSigned(*this);
+        	std::cout << "The form " << form.getFormName() << " signing by: " << getName() << std::endl;
+		}
+    }
+	catch (std::exception &e)
+	{
+        std::cout << "The bureaucrat " << getName() << " cannot sign form " << form.getFormName() << " because "
+                  << getName() << " grade: " << getGrade() << " is low!" << std::endl;
+    }
 }
 
 /* ======================================================== */

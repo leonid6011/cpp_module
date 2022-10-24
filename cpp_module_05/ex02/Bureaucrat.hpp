@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 22:35:57 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/24 00:52:02 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/24 00:56:12 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ class Bureaucrat
 	private:
 		const	std::string nameBureaucrat;
 		int		gradeBureaucrat;
+		int		execGradeBureaucrat;
 		
 	public:
 		Bureaucrat();
-		Bureaucrat(const std::string &name, int grade);
+		Bureaucrat(const std::string &name, int grade, int exec);
 		Bureaucrat(const Bureaucrat &copyObject);
 		virtual ~Bureaucrat();
 
@@ -39,10 +40,13 @@ class Bureaucrat
 
 		const std::string	&getName() const;
 		int					getGrade() const;
+		int					getExecGrade() const;
 	
 		void rankUpBureaucrat();
 		void rankDownBureaucrat();
 		void signForm(Form &form);
+		void executeForm(const Form &form);
+		
 		
 		class GradeTooHighException : public std::exception
 		{
