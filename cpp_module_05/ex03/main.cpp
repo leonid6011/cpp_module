@@ -6,7 +6,7 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 22:40:05 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/24 22:30:01 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/25 01:03:23 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int main()
             President.signForm(*scfTest);
 			President.signForm(*scfTest);
 			Prisoner.executeForm(*scfTest);
+            delete scfTest;
         }
 		catch (std::exception &e)
 		{
@@ -62,6 +63,7 @@ int main()
 			Form *rrfTest = Intern.makeForm("robotomy request", Leonid.getName());
 			President.signForm(*rrfTest);
 			Doctor.executeForm(*rrfTest);
+            delete rrfTest;
         }
 		catch (std::exception &e)
 		{
@@ -75,6 +77,7 @@ int main()
 			Form *ppfTest = Intern.makeForm("pardon", Prisoner.getName());
 			President.signForm(*ppfTest);
             President.executeForm(*ppfTest);
+            delete ppfTest;
         }
 		catch (std::exception &e)
 		{
@@ -88,6 +91,7 @@ int main()
 			Form *lolTest = Intern.makeForm("lol", Prisoner.getName());
 			President.signForm(*lolTest);
             President.executeForm(*lolTest);
+            delete lolTest;
         }
 		catch (std::exception &e)
 		{
