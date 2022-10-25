@@ -6,11 +6,13 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 22:19:57 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/24 20:45:19 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/25 17:32:58 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+
+/* ======================================================== */
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 	: Form("Shrubbery", SCF_SIGN, SCF_EXEC)
@@ -37,10 +39,14 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return *this;
 }
 
+/* ======================================================== */
+
 std::string ShrubberyCreationForm::getTarget() const
 {
 	return target;
 }
+
+/* ======================================================== */
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
@@ -50,6 +56,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw FormIsNotSignedException();
 	
 	std::ofstream file((getTarget() + "_shrubbery").c_str());
+	
 	if (file.is_open())
 	{
 		file	<< "\n"
@@ -68,3 +75,4 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	std::cout << executor.getName() << " successfully executed " << getFormName() << std::endl; 
 }
 
+/* ======================================================== */

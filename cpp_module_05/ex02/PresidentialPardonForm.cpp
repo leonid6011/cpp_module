@@ -6,11 +6,13 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 00:26:17 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/24 20:50:23 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/25 01:01:01 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+
+/* ======================================================== */
 
 PresidentialPardonForm::PresidentialPardonForm() 
 	: Form("Presidential Pardon Form", PPF_SIGN, PPF_EXEC), target("Presidential Pardon Form")
@@ -37,6 +39,8 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
 	return *this;
 }
 
+/* ======================================================== */
+
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 {
 	if (!getFormIsSigned())
@@ -46,3 +50,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	
 	std::cout << target << " has been pardoned Zaphod Beeblebrox" << std::endl;
 }
+
+/* ======================================================== */

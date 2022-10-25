@@ -6,13 +6,15 @@
 /*   By: echrysta <echrysta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 22:40:51 by echrysta          #+#    #+#             */
-/*   Updated: 2022/10/24 20:50:39 by echrysta         ###   ########.fr       */
+/*   Updated: 2022/10/25 01:01:13 by echrysta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cstdlib>
 #include "RobotomyRequestForm.hpp"
 #include "Bureaucrat.hpp"
+
+/* ======================================================== */
 
 RobotomyRequestForm::RobotomyRequestForm() 
 	: Form("Robotomy Request Form", RRF_SIGN, RRF_EXEC), target("Robotomy Request Form")
@@ -39,6 +41,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 	return *this;
 }
 
+/* ======================================================== */
+
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
 
@@ -54,3 +58,5 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	else
 		std::cout << target << " RobotomyRequest failed!" << std::endl;
 }
+
+/* ======================================================== */
