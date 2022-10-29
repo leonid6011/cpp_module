@@ -20,13 +20,13 @@ class MutantStack : public std::stack<T>
     public:
 	    MutantStack() : std::stack<T>()
         {}
-	    MutantStack(const MutantStack<T>& src) : std::stack<T>(src)
+	    MutantStack(const MutantStack<T> &copyObject) : std::stack<T>(copyObject)
         {}
 	    ~MutantStack()
         {}
-	    MutantStack<T>& operator=(const MutantStack<T>& rhs)
+	    MutantStack<T> &operator=(const MutantStack<T> &copyObject)
         {
-            std::stack<T>::operator=(rhs);
+            std::stack<T>::operator=(copyObject);
             return (*this);
         }
 	
